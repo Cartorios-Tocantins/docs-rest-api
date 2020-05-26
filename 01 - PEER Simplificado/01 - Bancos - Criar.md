@@ -55,4 +55,6 @@ print(response.text.encode('utf8'))
 ```
 
 ```response:200
+<?xml version="1.0" encoding="UTF-8"?>
+<SUCESSO mensagem="Solicitação efetuada com sucesso."></SUCESSO>
 ```
