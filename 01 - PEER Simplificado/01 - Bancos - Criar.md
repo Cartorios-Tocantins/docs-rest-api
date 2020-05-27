@@ -19,24 +19,20 @@ O presente método descrever a criação do Contrato Eletrônico Estruturado par
 
 Mais detalhes podem ser encontradas na [Documentação Completa em PDF](static/EspecificacaoTecnica_PEERSimplificado_Banco.pdf). Além disso, existem exemplos em [XML](static/ESTRUTURA_BANCO.xml) dos dados estruturados e o respectivo arquivo [XSD](static/ESTRUTURA_BANCO.xsd).
 
-| **Parâmetros de URL** |                                            |
-|-----------------------|--------------------------------------------|
-| cns `int`             | O código CNS do cartório.                  |
+| **Parâmetros de URL**                                  |
+|--------------------------------------------------------|
+| **cns** `int` *O código CNS do cartório.*              |
 
-
-| **Parâmetros**                                      |                                                                                                         |
-|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-|   CONTRATOS `list`                                  | Lista de contratos.                                                                                     |
-|   CONTRATOS.VERSAO `string`                         | Campo para identificação do modelo XML – PARA BANCOS VALOR “3.1.0”.                                     |
-|   CONTRATOS.CONTRATO `object`                       | Um contrato com seus respectivos dados.                                                                 |
-|   CONTRATOS.CONTRATO.CNS `int`                      | Número do CNS                                                                                           |
-|   CONTRATOS.CONTRATO.EMPREENDIMENTO `object`        | Empreendimento – esse campo será utilizado pela ARISP, para gerar o BOLETO separado por empreendimento. |
-|   CONTRATOS.CONTRATO.EMPREENDIMENTO.CODIGO `int`    | Código do empreendimento – usado para agrupamento para geração do boleto                                |
-|   CONTRATOS.CONTRATO.EMPREENDIMENTO.NOME `string`   | Nome do empreendimento                                                                                  |
-|   CONTRATOS.CONTRATO.NATUREZA `int`                 | Campo para identificação da natureza do título. Pode assumir os valores:                                |
-|                                                     | 1 - instrumento particular com força de escritura pública                                               |
-|                                                     | 2 - cédula de crédito imobiliário                                                                       |
-|                                                     | 3 - cédula de crédito bancário                                                                          |
+| **Parâmetros**                                                                                                                                                                                                                                             |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **CONTRATOS** `list` *Lista de contratos.*                                                                                                                                                                                                                 |
+| **CONTRATOS.VERSAO** `string` *Campo para identificação do modelo XML – PARA BANCOS VALOR “3.1.0”.*                                                                                                                                                        |
+| **CONTRATOS.CONTRATO** `int` *Um contrato com seus respectivos dados.*                                                                                                                                                                                     |
+| **CONTRATOS.CONTRATO.CNS** `list` *Número do CNS.*                                                                                                                                                                                                         |
+| **CONTRATOS.CONTRATO.EMPREENDIMENTO** `object` *Empreendimento – esse campo será utilizado pela ARISP, para gerar o BOLETO separado por empreendimento.*                                                                                                   |
+| **CONTRATOS.CONTRATO.EMPREENDIMENTO.CODIGO** `int` *Código do empreendimento – usado para agrupamento para geração do boleto.*                                                                                                                             |
+| **CONTRATOS.CONTRATO.EMPREENDIMENTO.NOME** `string` *Nome do empreendimento.*                                                                                                                                                                              |
+| **CONTRATOS.CONTRATO.NATUREZA** `int` *Campo para identificação da natureza do título. Pode assumir os valores: <br>1. instrumento particular com força de escritura pública; <br>2. cédula de crédito imobiliário; e <br>3. cédula de crédito bancário.*  |
 
 ```request:cURL
 curl --location --request POST \

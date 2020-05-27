@@ -8,16 +8,16 @@ O presente método descrever a listar os Contratos Eletrônicos Estruturados par
 
 Os registros são filtrados por competência e listados do mais recente para o mais antigo. É possível usar paginação para os registros.
 
-| **Parâmetros de URL** |                                            |
-|-----------------------|--------------------------------------------|
-| cns `int`             | O código CNS do cartório.                  |
+| **Parâmetros de URL**                                  |
+|--------------------------------------------------------|
+| **cns** `int` *O código CNS do cartório.*              |
 
 
-| **Query String**     |                                            |
-|----------------------|--------------------------------------------|
-| numero `int`         | O número da página solicitada.             |
-| tamanho `int`        | O número de itens a retornar por página.   |
-| competencia `string` | O mês a ser pesquisado no formato MM/AAAA. |
+| **Query String**                                                      |
+|-----------------------------------------------------------------------|
+| **numero** `int` *O número da página solicitada.*                     |
+| **tamanho** `int` *O número de itens a retornar por página.*          |
+| **competencia** `string` *O mês a ser pesquisado no formato MM/AAAA.* |
 
 ```request:cURL
 curl --location --request GET \
