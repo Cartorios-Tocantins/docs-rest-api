@@ -8,10 +8,10 @@ O presente método descrever a leitura de um único Contrato Eletrônico Estrutu
 
 A resposta recebida é semelhante ao método Listar, porém com um único elemnto `CONTRATO` na lista `CONTRATOS`.
 
-| **Parâmetros de URL** |                                            |
-|-----------------------|--------------------------------------------|
-| cns `int`             | O código CNS do cartório.                  |
-| num_contrato `int`    | O número do contrato a ser recuperado.     |
+| **Parâmetros de URL**                                           |
+|-----------------------------------------------------------------|
+| **cns** `int` *O código CNS do cartório.*                       |
+| **num_contrato** `int` *O número do contrato a ser recuperado.* |
 
 ```request:cURL
 curl --location --request GET \
