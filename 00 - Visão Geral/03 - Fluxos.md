@@ -2,7 +2,7 @@
 title: Fluxos
 ---
 
-Os serviços na Cartórios Tocantins seguem um fluxo padrão -- salvo excessões identificadas como tal. Esse fluxo é composto por uma fase inicial (Ponto de Partida) e outras 5 fases:
+Os serviços na Cartórios Tocantins seguem um fluxo padrão -- salvo excessões identificadas como tal. Esse fluxo é composto por uma fase inicial (Ponto de Partida) e outras 5 fases. No Ponto de Partida, as empresas pesquisam por cartórios que prestam serviços via API e se informam sobre quais serviços são prestados. Nas demais fases:
 
 1. Autenticação: as informações de acesso são utilizadas para obter o Token JWT.
 2. Registro de Serviço: o serviço é registrado e enviado diretamente do cliente para o cartório.
