@@ -7,21 +7,25 @@ A Cartórios Tocantins utiliza os códigos de estado HTTP para responder às req
 Os erros mais comuns são mostrados nos exemplos abaixo.
 
 ```response:400
-<?xml version="1.0" encoding="UTF-8"?>
-<ERRO mensagem="Dados inválidos na requisição."></ERRO>
+{
+    "mensagem": "Dados inválidos na requisição."
+}
 ```
 
 ```response:401
-<?xml version="1.0" encoding="UTF-8"?>
-<ERRO mensagem="Acesso não autorizado."></ERRO>
+{
+    "mensagem": "Acesso não autorizado."
+}
 ```
 
 ```response:404
-<?xml version="1.0" encoding="UTF-8"?>
-<ERRO mensagem="Não encontrado."></ERRO>
+{
+    "mensagem": "Não encontrado."
+}
 ```
 
 ```response:500
-<?xml version="1.0" encoding="UTF-8"?>
-<ERRO mensagem="Ocorreu um erro no servidor."></ERRO>
+{
+    "mensagem": "Ocorreu um erro no servidor."
+}
 ```

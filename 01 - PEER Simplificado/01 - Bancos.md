@@ -1,14 +1,304 @@
 ---
-title: Bancos - Criar
 method: POST
-url: "{{CARTORIO_URL}}:cns/bancos/contratos-eletronicos"
+url: "{{CARTORIO_URL}}:cns/bancos/contratos"
 ---
 
-O presente método descrever a criação do Contrato Eletrônico Estruturado para Registro.
+##### Contratos Eletrônicos
 
-| **Parâmetros de URL**                                  |
-|--------------------------------------------------------|
-| **cns** `int` *O código CNS do cartório.*              |
+O presente método descrever a solicitação de Contrato Eletrônico Estruturado para Registro dos bancos, atendendo os seguintes negócios:
+
+- Compra e Venda
+- Compra e Venda e Alienação Fiduciária
+- Alienação Fiduciária
+- Alienação Fiduciária com CCI ou CCB
+- Hipotéca com CCI ou CCB
+- Convenio de Limite de Crédito com Alienação Fiduciária
+- Portabilidade [LEI Nº 13.476, DE 28 DE AGOSTO DE 2017](http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2017/Lei/L13476.htm)
+- CCI ou CCB
+- Aditamento de Cédula
+- Doação
+
+Mais detalhes podem ser encontradas na [Documentação Completa em PDF](static/EspecificacaoTecnica_PEERSimplificado_Banco.pdf). Além disso, existem exemplos em [XML](static/ESTRUTURA_BANCO.xml) dos dados estruturados e o respectivo arquivo [XSD](static/ESTRUTURA_BANCO.xsd).
+
+```request:Python
+import requests
+
+url = "{{CARTORIO_URL}}bancos/contratos"
+headers = {
+    'Authorization': 'Bearer: {JWT Token Here}'
+    'Content-Type': 'application/xml'
+}
+
+
+xml = """
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTRATOS>
+    <VERSAO>3.2.0</VERSAO>  
+    <CONTRATO>
+        <CNS></CNS>
+        <EMPREENDIMENTO> 
+            <CODIGO></CODIGO>
+            <NOME></NOME> 
+        </EMPREENDIMENTO>
+        <NATUREZA></NATUREZA>
+        <DATAINSTRUMENTO></DATAINSTRUMENTO>
+        <NUMCONTRATO></NUMCONTRATO>     
+        <REMETENTE>
+            <NOME></NOME>
+            <CPFCNPJ></CPFCNPJ>
+            <ENDERECO>
+                <TIPOLOGRADOURO></TIPOLOGRADOURO>
+                <LOGRADOURO></LOGRADOURO>
+                <NUMERO></NUMERO>
+                <UNIDADE></UNIDADE>
+                <BAIRRO></BAIRRO>
+                <CIDADE></CIDADE>
+                <UF></UF>
+                <CEP></CEP>
+            </ENDERECO> 
+            <CONTATO>
+                <EMAIL></EMAIL>
+                <TELEFONE>
+                    <DDD></DDD>
+                    <NUMERO></NUMERO>
+                </TELEFONE>
+            </CONTATO>
+            <REPRESENTANTE>
+                <NOME></NOME>
+                <CPF></CPF>
+            </REPRESENTANTE>
+        </REMETENTE>
+        <APRESENTANTE>
+            <NOME></NOME>
+            <CPFCNPJ></CPFCNPJ>
+            <ENDERECO>
+                <TIPOLOGRADOURO></TIPOLOGRADOURO>
+                <LOGRADOURO></LOGRADOURO>
+                <NUMERO></NUMERO>
+                <UNIDADE></UNIDADE>
+                <BAIRRO></BAIRRO>
+                <CIDADE></CIDADE>
+                <UF></UF>
+                <CEP></CEP>
+            </ENDERECO>
+            <CONTATO>
+                <EMAIL></EMAIL>
+                <TELEFONE>
+                    <DDD></DDD>
+                    <NUMERO></NUMERO>
+                </TELEFONE>
+            </CONTATO>
+        </APRESENTANTE>
+        <NEGOCIOS>
+            <NEGOCIO>
+                <SEQUENCIAL></SEQUENCIAL>
+                <TIPOATO></TIPOATO>
+                <VALORTRANSMISSAO></VALORTRANSMISSAO>
+                <VALORVENAL></VALORVENAL>
+                <VALORFINANCIAMENTO></VALORFINANCIAMENTO>
+                <VALORAVALIACAO></VALORAVALIACAO>
+                <VALORLEILAO></VALORLEILAO>
+                <RECURSOSPROPRIOS></RECURSOSPROPRIOS>
+                <FINANCIAMENTOFAR></FINANCIAMENTOFAR>
+                <SUBSIDIOS></SUBSIDIOS>
+                <FGTS></FGTS>
+                <OUTROSRECURSOS></OUTROSRECURSOS>
+                <PRIMEIRAAQUISICAO></PRIMEIRAAQUISICAO>
+                <OBSERVACOESGERAIS></OBSERVACOESGERAIS>
+                <IMOVEIS>
+                    <IMOVEL>                        
+                        <LOCALIZACAO></LOCALIZACAO>
+                        <NUMEROREGISTRO></NUMEROREGISTRO>
+                        <IPTU></IPTU>
+                        <CCIR></CCIR>
+                        <NIRF></NIRF>
+                        <LIVRO></LIVRO>
+                        <TIPOIMOVEL></TIPOIMOVEL>
+                        <EDIFICACAO></EDIFICACAO>
+                        <ENDERECO>
+                            <TIPOLOGRADOURO></TIPOLOGRADOURO>
+                            <LOGRADOURO></LOGRADOURO>
+                            <NUMERO></NUMERO>
+                            <UNIDADE></UNIDADE>
+                            <BAIRRO></BAIRRO>
+                            <CIDADE></CIDADE>
+                            <UF></UF>
+                            <LOTE></LOTE>
+                            <QUADRA></QUADRA>
+                            <TORRE></TORRE>                         
+                            <COMPLEMENTO></COMPLEMENTO>
+                        </ENDERECO> 
+                    </IMOVEL>
+                </IMOVEIS>
+                <PARTES>
+                    <PARTE>
+                        <QUALIFICACAO></QUALIFICACAO>
+                        <CPFCNPJ></CPFCNPJ>
+                        <FRACAO></FRACAO>
+                    </PARTE>
+                </PARTES>
+            </NEGOCIO>          
+                
+        </NEGOCIOS>
+        <FINANCIAMENTO>
+            <DADOS>
+                <VALORFINANCIAMENTO></VALORFINANCIAMENTO>
+                <VALORAVALIACAO></VALORAVALIACAO>
+                <VALORLEILAO></VALORLEILAO>
+                <PRAZOCARENCIA></PRAZOCARENCIA>
+                <ENQUADRAMENTOFINANCIAMENTO></ENQUADRAMENTOFINANCIAMENTO>
+                <SISTEMAAMORTIZACAO></SISTEMAAMORTIZACAO>
+                <ORIGEMRECURSOS></ORIGEMRECURSOS>
+                <JUROSANUALNOMINAL></JUROSANUALNOMINAL>
+                <JUROSANUALEFETIVO></JUROSANUALEFETIVO>
+                <JUROSMENSALNOMINAL></JUROSMENSALNOMINAL>
+                <JUROSMENSALEFETIVO></JUROSMENSALEFETIVO>
+                <PRAZOAMORTIZACAO></PRAZOAMORTIZACAO>
+                <VALORPRIMEIRAPARCELA></VALORPRIMEIRAPARCELA>
+                <DATAPRIMEIRAPARCELA></DATAPRIMEIRAPARCELA>
+                <DESTFINANCIAMENTO></DESTFINANCIAMENTO>
+                <FORMADEPAGAMENTO></FORMADEPAGAMENTO>
+                <VALORTOTALCREDITO></VALORTOTALCREDITO>
+                <!-- CAMPOS PARA CONVENIO DE LIMITE DE CRÉDITO COM ALIENAÇÃO FIDUCIÁRIA DE IMÓVEL -->
+                <TAXAMAXIMAJUROS></TAXAMAXIMAJUROS>
+                <TAXAMINIMAJUROS></TAXAMINIMAJUROS>
+                <!-- CAMPOS PARA CONVENIO DE LIMITE DE CRÉDITO COM ALIENAÇÃO FIDUCIÁRIA DE IMÓVEL -->
+                <PRAZODEVIGENCIA></PRAZODEVIGENCIA>
+                <!-- CAMPOS PARA CONVENIO DE LIMITE DE CRÉDITO COM ALIENAÇÃO FIDUCIÁRIA DE IMÓVEL -->
+                <VENCIMENTOANTECIPADO></VENCIMENTOANTECIPADO>
+                <!-- CAMPOS PARA CONVENIO DE LIMITE DE CRÉDITO COM ALIENAÇÃO FIDUCIÁRIA DE IMÓVEL -->
+                <INFORMACAOGERAIS></INFORMACAOGERAIS>
+            </DADOS>
+        </FINANCIAMENTO>
+        <CEDULA>
+            <TIPO></TIPO>
+            <!-- CCI OU CCB-->
+            <TIPOCEDULA></TIPOCEDULA>
+            <!-- INTEGRAL E FRACIONÁRIA -->
+            <NUMERO></NUMERO>
+            <FRACAO></FRACAO>
+            <SERIE></SERIE>
+            <ESPECIE></ESPECIE>
+            <!--CARTULAR E ESCRITURAL -->
+            <CUSTODIANTEEMISSOR></CUSTODIANTEEMISSOR>
+            <DATA/>
+        </CEDULA>
+        <PARTESNEGOCIO>
+            <PARTE>
+                <QUALIFICACAO></QUALIFICACAO>
+                <NOME></NOME>
+                <CPFCNPJ></CPFCNPJ>
+                <GENERO></GENERO>
+                <MENORDEIDADE></MENORDEIDADE>
+                <DATANASCIMENTO></DATANASCIMENTO>
+                <DOCUMENTO></DOCUMENTO>
+                <ORGAOEMISSOR></ORGAOEMISSOR>
+                <NACIONALIDADE></NACIONALIDADE>
+                <CAPACIDADECIVIL></CAPACIDADECIVIL>
+                <ESTADOCIVIL></ESTADOCIVIL>
+                <REGIMEBENS></REGIMEBENS>
+                <DATACASAMENTO></DATACASAMENTO>
+                <NUMEROPACTO></NUMEROPACTO>
+                <DATAPACTO></DATAPACTO>
+                <LOCALREGISTROPACTO></LOCALREGISTROPACTO>
+                <UNIAOESTAVEL></UNIAOESTAVEL>
+                <PROFISSAO></PROFISSAO>
+                <ENDERECO>
+                    <TIPOLOGRADOURO></TIPOLOGRADOURO>
+                    <LOGRADOURO></LOGRADOURO>
+                    <NUMERO></NUMERO>
+                    <UNIDADE></UNIDADE>
+                    <BAIRRO></BAIRRO>
+                    <CEP></CEP>
+                    <CIDADE></CIDADE>
+                    <UF></UF>
+                </ENDERECO> 
+                <CPFCONJUGE></CPFCONJUGE>
+                <CONJUGEAUSENTE></CONJUGEAUSENTE>
+                <EMAIL></EMAIL>
+                <FILIACAO1></FILIACAO1>
+                <FILIACAO2></FILIACAO2>
+                <REPRESENTANTE></REPRESENTANTE>
+            </PARTE>
+        </PARTESNEGOCIO>
+        <REPRESENTANTE>
+            <INSTRUMENTO>
+                <REPRESENTANTE></REPRESENTANTE>
+                <REPRESENTADO></REPRESENTADO>
+                <NUMERO></NUMERO>
+                <TIPOREGISTRO></TIPOREGISTRO>
+                <ORGAO></ORGAO>
+                <FORMAREGISTRO></FORMAREGISTRO>
+                <NUMEROLIVRO></NUMEROLIVRO>
+                <FOLHA></FOLHA>
+                <NUMEROREGISTRO></NUMEROREGISTRO>
+                <DATAREGISTRO></DATAREGISTRO>
+            </INSTRUMENTO>
+        </REPRESENTANTE>
+        <IMPOSTOS>
+            <IMPOSTOTRANSMISSAO> 
+                <ISENCAO></ISENCAO>
+                <INSCRICAO></INSCRICAO>
+                <GUIA></GUIA>
+                <VALOR></VALOR>
+            </IMPOSTOTRANSMISSAO>           
+            <DAJES>         
+                <DAJE>
+                    <EMISSOR></EMISSOR>
+                    <SERIE></SERIE>
+                    <NUMERO></NUMERO>                       
+                    <VALOR></VALOR>
+                </DAJE>                         
+            </DAJES>
+        </IMPOSTOS>
+        <CLAUSULASDECLARACOES>
+            <VERIFICACAODAPARTES>
+                <VERIFICACAODAPARTE>
+                    <PARTE></PARTE>
+                    <DESCREVER></DESCREVER>
+                </VERIFICACAODAPARTE>               
+            </VERIFICACAODAPARTES>
+            <VERIFICACAODOIMOVEIS>
+                <VERIFICACAODOIMOVEL>
+                    <IMOVEL></IMOVEL>
+                    <DESCREVER></DESCREVER>
+                </VERIFICACAODOIMOVEL>
+            </VERIFICACAODOIMOVEIS>
+        </CLAUSULASDECLARACOES>
+        <AUTORIZACOES>
+            <DECLARO>
+                <![CDATA[DECLARO QUE ESTES DADOS CORRESPONDEM FIDEDIGNAMENTE AOS QUE CONSTAM NO 
+                RESPECTIVO INSTRUMENTO PARTICULAR COM FORÇA DE ESCRITURA PÚBLICA QUE LHE DEU ORIGEM, 
+                FORMALIZADO COM TODAS AS CLÁUSULAS OBRIGATÓRIAS, QUE SE ENCONTRA EM SEU ARQUIVO, 
+                E QUE FOI VERIFICADA A IDENTIFICAÇÃO E A REGULARIDADE DA REPRESENTAÇÃO DAS PARTES 
+                QUE SUBSCREVERAM O DOCUMENTO ORIGINAL.]]>
+            </DECLARO>
+            <AUTORIZO>
+                <![CDATA[AUTORIZO O OFICIAL DE REGISTRO DE IMÓVEIS A 
+                PRATICAR OS ATOS EXCLUSIVAMENTE COM BASE NOS DADOS PRESENTES NESTE DOCUMENTO.]]>
+            </AUTORIZO>
+            <AUTORIZO>
+                <![CDATA[DECLARO QUE HÁ EXISTÊNCIA DE CLAUSULA ASSEGURANDO AO FIDUCIANTE, ENQUANTO ADIMPLENTE, 
+                A LIVRE UTILIZAÇÃO DO IMÓVEL OBJETO DA ALIENAÇÃO FIDUCIÁRIA. ]]>
+            </AUTORIZO>
+            <AUTORIZO>
+                <![CDATA[DECLARO QUE CONSTAM CLAUSULAS DISPONDO SOBRE OS PROCEDIMENTOS DO PÚBLICO LEILÃO PARA 
+                ALIENAÇÃO DO IMÓVEL, NOS TERMOS DO ARTIGO 27 DA LEI 9.514. ]]>
+            </AUTORIZO>
+        </AUTORIZACOES>
+    </CONTRATO>
+</CONTRATOS>
+"""
+
+response = requests.post(url, data=xml, headers=headers)
+print(response.text.encode('utf8'))
+```
+
+```response:200
+{
+    "mensagem": "Solicitação efetuada com sucesso."
+}
+```
 
 | **Parâmetros**                                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -151,7 +441,7 @@ O presente método descrever a criação do Contrato Eletrônico Estruturado par
 | **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.DOCUMENTO** `string` *Documento da parte. Tamanho máximo: 30 caracteres.*                                                                                                                     |
 | **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTE.ORGAOEMISSOR** `string` *Órgão emissor do documento. Tamanho máximo: 20 caracteres.*                                                                                                                       |
 | **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.NACIONALIDADE** `string` *Nacionalidade. Tamanho máximo: 50 caracteres.*                                                                                                                      |
-| **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.CAPACIDADECIVIL** `int` *Capacidade civil. Pode assumir os valores: <br>1 - Capaz <br>2 - Relativamente capaz <br>3 - Incapaz* |
+| **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.CAPACIDADECIVIL** `int` *Capacidade civil. Pode assumir os valores: <br>1 - Capaz <br>2 - Relativamente capaz <br>3 - Incapaz*                                                                |
 | **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.ESTADOCIVIL** `int` *Estado Civil. Pode assumir os valores: <br>1 - Casada <br>2 - Casado <br>3 - Divorciada <br>4 - Divorciado <br>5 - Espólio <br>6 - Separada <br>7 - Separada judicialmente <br>8 - Separado <br>9 - Separado judicialmente <br>10 - Solteira <br>11 - Solteira, maior <br>12 - Solteira, menor impúbere <br>13 - Solteira, menor púbere <br>14 - Solteiro <br>15 - Solteiro, maior <br>16 - Solteiro, menor impúbere <br>17 - Solteiro, menor púbere <br>18 - Viúva <br>19 - Viúvo <br>20 - Menor emancipado <br>21 - Outros* |
 | **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.REGIMEBENS** `int` *Regime de bens. Pode assumir os valores: <br>1 - Comunhão de bens <br>2 - Comunhão de bens vigente na Venezuela <br>3 - Comunhão parcial de bens <br>4 - Comunhão parcial de bens às Leis da Noruega <br>5 -  Comunhão parcial de bens, à Lei Suiça <br>6 - Comunhão parcial de bens, antes da vigência da Lei 6.515/77 <br>7 - Comunhão parcial de bens, na vigência da Lei 6.515/77 <br>8 - Comunhão universal de bens <br>9 - Comunhão universal de bens, antes da vigência da Lei 6.515/77 <br>10 - Comunhão universal de bens, às Leis de Ângola <br>11 - Comunhão universal de bens, às Leis italianas <br>12 - Comunhão universal de bens, na vigência da Lei 6.515/77 <br>13 - Conforme a lei vigente em Israel <br>14 - Leis da Alemanha <br>15 - Leis da Argentina <br>16 - Leis da Austrália <br>17 - Leis da Bolívia <br>18 - Leis da China <br>19 - Leis da Colômbia <br>20 - Leis da Costa do Marfim <br>21 - Leis da Costa Rica <br>22 - Leis da Dinamarca <br>23 - Leis da Espanha <br>24 - Leis da Finlândia <br>25 - Leis da França <br>26 - Leis da Guatemala <br>27 - Leis da Holanda <br>28 - Leis da Inglaterra <br>29 - Leis da Itália <br>30 - Leis da Jordania <br>31 - Leis da Jordânia <br>32 - Leis da Polonia <br>33 - Leis da República da Coréia <br>34 - Leis da Suíça <br>35 - Leis de Angola <br>36 - Leis de Cuba <br>37 - Leis de Moscou <br>38 - Leis de Taiwan <br>39 - Leis do Canadá <br>40 - Leis do Japão <br>41 - Leis do Líbano <br>42 - Leis do Paraguai <br>43 - Leis do Uruguai <br>44 - Leis dos Estados Unidos <br>45 - Leis Egípcias <br>46 - Leis Portuguesas <br>47 - Participação final nos aquestos <br>48 - Regime de bens conforme as Leis americanas <br>49 - Regime vigente no Chile <br>50 - Separação de bens <br>51 - Separação de bens conforme as Leis da Áustria <br>52 - Separação de bens, antes da vigência da Lei 6.515/77 <br>53 - Separação de bens, na vigência da Lei 6.515/77 <br>54 - Separação obrigatória de bens <br>55 - Separação parcial, antes da vigência da Lei 6.515/77 <br>56 - Separação parcial, na vigência da Lei 6.515/77 <br>57 - Separação total de bens, na vigência da Lei 6.515/77* |
 | **CONTRATOS.CONTRATO.PARTESNEGOCIO.PARTENEGOCIO.PARTE.DATACASAMENTO** `date` *Data de casamento. Formato de Data, ex.: YYYY-MM-DD.*                                                                                                                 |
@@ -181,23 +471,3 @@ O presente método descrever a criação do Contrato Eletrônico Estruturado par
 | **CONTRATOS.CONTRATO.AUTORIZACOES** `object` *Lista de AUTORIZACAO*                                                                                                                                                                                 |
 | **CONTRATOS.CONTRATO.AUTORIZACOES.DECLARO** `string` *Descrição do texto de declarações. Campo do tipo texto, não foi definido tamanho máximo.*                                                                                                     |
 | **CONTRATOS.CONTRATO.AUTORIZACOES.AUTORIZO** `string` *Descrição da verificação da parte. Campo do tipo texto, não foi definido tamanho máximo.*                                                                                                    |
-```request:cURL
-curl --location --request POST \
-    --url '{{CARTORIO_URL}}:cns/bancos/contratos-eletronicos' \
-    --header 'Content-Type: application/xml' 
-```
-
-```request:Python
-import requests
-url = "{{CARTORIO_URL}}:cns/bancos/contratos-eletronicos"
-headers = {
-  'Content-Type': 'application/xml'
-}
-response = requests.request("POST", url, headers=headers)
-print(response.text.encode('utf8'))
-```
-
-```response:200
-<?xml version="1.0" encoding="UTF-8"?>
-<SUCESSO mensagem="Solicitação efetuada com sucesso."></SUCESSO>
-```
