@@ -12,6 +12,6 @@ Os serviços na Cartórios Tocantins seguem um fluxo padrão -- salvo excessões
 
 Abaixo pode ser visto o detalhamento do fluxo em um diagrama. Cada um dos chamados é descrito com mais detalhes no link específico no menu lateral esquerdo.
 
-![Fluxo](img/fluxo.png)
+![Fluxo](img/fluxo.svg)
 
 
