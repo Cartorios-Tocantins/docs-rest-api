@@ -10,6 +10,8 @@ Os serviços na Cartórios Tocantins seguem um fluxo padrão -- salvo excessões
 4. Emissão de Exigência (Opcional): eventuais dados que não constem no pedido original podem ser solicitados por meio de uma exigência.
 5. Relatório: O cartório informa metadados para a Cartórios Tocantins para fins de criação de estatísticas e indicadores.
 
-Abaixo pode ser visto o detalhamento do fluxo em um diagrama.
+Abaixo pode ser visto o detalhamento do fluxo em um diagrama. Cada um dos chamados é descrito com mais detalhes no link específico no menu lateral esquerdo.
 
 ![Fluxo](img/fluxo.png)
+
+
