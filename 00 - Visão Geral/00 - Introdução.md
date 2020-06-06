@@ -2,7 +2,7 @@
 title: Introdução
 ---
 
-A Cartórios Tocantins disponibiliza uma API de comunicação web, no padrão REST, implementando os padrões de Pedidos Eletrônicos Estruturados para Registro - PEER Simplificado. Essa especificação é desenvolvida pela [ARISP](http://www.arisp.com.br/). 
+A Cartórios Tocantins disponibiliza uma API de comunicação web, no padrão REST, implementando os padrões de Pedidos Eletrônicos Estruturados para Registro - PEER Simplificado. Essa especificação é desenvolvida pela [Registro de Imóveis do Brasil](https://www.registrodeimoveis.org.br/orientacoes). 
 
 As trocas de dados estruturados serão feitas no formato XML e JSON e os envios de arquivo usando a tecnologia de Multipart Form-Data. O controle de alterações (i.e., *Changelog*) da documentação poderá ser acompanhado por meio de repositório público no [Github](https://github.com/anoregto/docs-rest-api). Sugestões de melhorias ou dúvidas podem ser tiradas por lá por meio da ferramenta de *Issues*, além dos canais tradicionais de atendimento da Cartórios Tocantins.
 
