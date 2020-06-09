@@ -8,7 +8,9 @@ url: "{{CARTORIO_URL}}:/api/servicos"
 
 Os cartórios devem poder ver a especificação do endpoint de serviços prestados. Esse endpoint serve para que que cada cartório liste quais dos serviços especificados pelo XPTO ele fornece via API.
 
-Exemplo: Via API, um sistema de cartório deve poder consultar os serviços especificados pelo XPTO. GET /api/serviços.
+Exemplo: Via API, um sistema de cartório deve poder consultar os serviços especificados pelo XPTO. 
+
+**GET /api/serviços**
 
 *Verificar serviços e campos de cada um dos serviços.
 

@@ -1,6 +1,21 @@
-# Endpint de Autenticação - 7
-
 ---
+method: POST
+url: "{{CARTORIO_URL}}:/api/autenticacao"
+---
+
+
+##### Endpint de Autenticação - 7
+
+Após a validação dos cadastros, os usuários poderão utilizar o Endpoint de Autenticação para logar no sistema.
+
+• Via API: A aplicação do cliente deve poder fazer autenticação via API utilizando sua identificação CNS/CNPJ e seu hash de acesso. 
+
+**POST /api/autenticacao**
+
+Envio:
+Enviar um identificador, que poderá ser o CNS (no caso do Cartório) ou CNPJ (no caso de Empresa)
+e passe (senha).
+
 
 - [URI](#uri)
 - [Header](#header)
