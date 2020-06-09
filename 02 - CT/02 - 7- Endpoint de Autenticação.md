@@ -34,7 +34,7 @@ none
 
 ```json 
 {
-  "identificacao" : "000000", // CNS ou CNPJ
+  "identificacao" : "000000",  // CNS ou CNPJ
   "passe": "00000"
 }
 ```
