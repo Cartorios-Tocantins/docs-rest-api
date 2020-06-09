@@ -1,6 +1,14 @@
-# Me - Retorna Dados do Usuário - 
-
 ---
+method: POST
+url: "{{CARTORIO_URL}}:/api/me"
+---
+
+
+##### Me - Retorna os Dados do Usuário Autenticado - 
+
+Retorna os dados do usuário através do JWT token.
+
+
 
 - [URI](#uri)
 - [Header](#header)

@@ -1,6 +1,14 @@
-# Refresh - 
-
 ---
+method: GET
+url: "{{CARTORIO_URL}}:/api/refresh"
+---
+
+
+##### Refresh - 
+
+Faz o refresh do JWT token.
+
+
 
 - [URI](#uri)
 - [Header](#header)

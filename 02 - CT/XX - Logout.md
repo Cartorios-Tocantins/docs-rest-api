@@ -1,6 +1,14 @@
-# Logout - 
-
 ---
+method: GET
+url: "{{CARTORIO_URL}}:/api/logout"
+---
+
+
+##### Logout - 
+
+Faz o logout do usuário.
+
+
 
 - [URI](#uri)
 - [Header](#header)
