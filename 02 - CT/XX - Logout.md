@@ -48,5 +48,6 @@ Content:
 
 ```json 
 {
+    "Mensagem": "Deslogado com sucesso!"
 }
 ```
