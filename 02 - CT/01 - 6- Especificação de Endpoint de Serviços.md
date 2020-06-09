@@ -1,14 +1,14 @@
 ---
-method: POST
+method: GET
 url: "{{CARTORIO_URL}}:/api/servicos"
 ---
 
 
 ##### Especificação de Endpoint de Serviços - 6
 
-Os cartórios devem poder ver a especificação do endpoint de serviços prestados. Esse endpoint serve para que que cada cartório liste quais dos serviços especificados pelo XPTO ele fornece via API.
+Os cartórios devem poder ver a especificação do endpoint de serviços prestados. Esse endpoint serve para que que cada cartório liste quais dos serviços especificados pelo CT ele fornece via API.
 
-Exemplo: Via API, um sistema de cartório deve poder consultar os serviços especificados pelo XPTO. 
+Exemplo: Via API, um sistema de cartório deve poder consultar os serviços especificados pelo CT. 
 
 **GET /api/serviços**
 
