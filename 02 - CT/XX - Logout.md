@@ -1,7 +1,7 @@
 ---
 title: Logout -
 method: POST
-url: "{{CARTORIO_URL}}:/api/logout"
+url: "{{CARTORIO_URL}}/api/logout"
 ---
 
 

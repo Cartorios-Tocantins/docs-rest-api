@@ -1,7 +1,7 @@
 ---
 title: Endpoint de Autenticação - 7
 method: POST
-url: "{{CARTORIO_URL}}:/api/autenticacao"
+url: "{{CARTORIO_URL}}/api/autenticacao"
 ---
 
 Endpoint de Autenticação - 7

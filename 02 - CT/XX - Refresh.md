@@ -1,7 +1,7 @@
 ---
 title: Refresh -
 method: POST
-url: "{{CARTORIO_URL}}:/api/refresh"
+url: "{{CARTORIO_URL}}/api/refresh"
 ---
 
 

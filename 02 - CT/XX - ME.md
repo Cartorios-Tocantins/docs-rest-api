@@ -1,7 +1,7 @@
 ---
 title: Me - Retorna os Dados do Usuário Autenticado -
 method: POST
-url: "{{CARTORIO_URL}}:/api/me"
+url: "{{CARTORIO_URL}}/api/me"
 ---
 
 

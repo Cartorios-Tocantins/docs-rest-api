@@ -1,7 +1,7 @@
 ---
 title: Endpoint de Criação de Código de Serviço - 8
 method: POST
-url: "{{CARTORIO_URL}}:/api/servico"
+url: "{{CARTORIO_URL}}/api/servico"
 ---
 
 
