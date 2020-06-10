@@ -1,7 +1,7 @@
 ---
 title: Endpoint de Autenticação - 7
 method: POST
-url: "{{CARTORIO_URL}}/api/autenticacao"
+url: "{{API_URL}}/api/autenticacao"
 ---
 
 Endpoint de Autenticação - 7
@@ -16,7 +16,7 @@ e passe (senha).
 
 
 ```request:cURL
-curl --location --request POST '{{CARTORIO_URL}}/autenticacao' \
+curl --location --request POST '{{API_URL}}/autenticacao' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"identificacao": "123456",
