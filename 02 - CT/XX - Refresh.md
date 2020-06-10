@@ -9,6 +9,7 @@ Refresh -
 
 Faz o refresh do JWT token.
 
+**POST /api/refresh**
 
 ```request:cURL
 curl --location --request POST "{{API_URL}}/refresh" \

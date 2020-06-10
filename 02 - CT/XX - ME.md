@@ -9,6 +9,7 @@ Me - Retorna os Dados do Usuário Autenticado -
 
 Retorna os dados do usuário através do JWT token.
 
+**POST /api/me**
 
 ```request:cURL
 curl --location --request GET "{{API_URL}}/me" \

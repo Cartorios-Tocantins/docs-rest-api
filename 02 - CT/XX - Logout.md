@@ -9,6 +9,7 @@ Logout -
 
 Faz o logout do usuário.
 
+**POST /api/logout**
 
 ```request:cURL
 curl --location --request POST "{{API_URL}}/logout" \
