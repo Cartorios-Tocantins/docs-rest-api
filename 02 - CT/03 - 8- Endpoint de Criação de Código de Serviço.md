@@ -16,7 +16,7 @@ Envio:
 Solicita um hash para execução do serviço, através do CNS do Cartório.
 
 ```request:cURL
-curl --location --request POST "{{API_URL}}/servico" \
+curl --location --request POST "{{API_URL}}/api/servico" \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRlbnRpY2FjYW8iLCJpYXQiOjE1OTEzNjgxMzgsImV4cCI6MTU5MTM3MTczOCwibmJmIjoxNTkxMzY4MTM4LCJqdGkiOiI4NGNkOThmYkNjcjRGaE41Iiwic3ViIjoiNjgyNjI5YWEtZWM1OS00NTg0LWI3NDgtZjQzNWFmOGQzZjE4IiwicHJ2IjoiYzAxMGM4OGUxMWY0MWM0Njc5YTNmMzVlMmQwYWQ3YTVlOWFiOWNkMCJ9.LgvKBsn96gVKPZCh85MJmVyh2KZR1k3dO8gUmqt5oJQ" \
   --data "{

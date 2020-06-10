@@ -19,7 +19,7 @@ Exemplo: Via API, um sistema de cartório deve poder consultar os serviços espe
 
 
 ```request:cURL
-curl --location --request GET "{{API_URL}}:/api/servicos" \
+curl --location --request GET "{{API_URL}}/api/servicos" \
   --header "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRlbnRpY2FjYW8iLCJpYXQiOjE1OTEzNjk5NzYsImV4cCI6MTU5MTM3MzU3NiwibmJmIjoxNTkxMzY5OTc2LCJqdGkiOiJoSFZwbVBuaEo4QzEyMFZiIiwic3ViIjoiNjgyNjI5YWEtZWM1OS00NTg0LWI3NDgtZjQzNWFmOGQzZjE4IiwicHJ2IjoiYzAxMGM4OGUxMWY0MWM0Njc5YTNmMzVlMmQwYWQ3YTVlOWFiOWNkMCJ9.1PFx1W5nn3WPRaIl_Ms23A9e15qwg3bZtCtgZOmwfBI" \
   --header "Content-Type: application/json"
 ```

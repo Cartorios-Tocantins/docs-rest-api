@@ -16,7 +16,7 @@ e passe (senha).
 
 
 ```request:cURL
-curl --location --request POST '{{API_URL}}/autenticacao' \
+curl --location --request POST '{{API_URL}}/api/autenticacao' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"identificacao": "123456",
