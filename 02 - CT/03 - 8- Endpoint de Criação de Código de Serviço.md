@@ -10,6 +10,8 @@ Endpoint de Criação de Código de Serviço - 8
 Via API, um sistema de cliente deve poder gerar um hash de acompanhamento de serviço vinculado ao CNPJ dele e a um CNS de cartório.
 Esse código de acompanhamento deve estar vinculado ao CNPJ da empresa e ao CNS de cartório. 
 
+Passe o "cns" no corpo da requisição.
+
 **POST /api/servico/**
 
 Envio:

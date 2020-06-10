@@ -10,6 +10,8 @@ Após a validação dos cadastros, os usuários poderão utilizar o Endpoint de 
 
 • Via API: A aplicação do cliente deve poder fazer autenticação via API utilizando sua identificação CNS/CNPJ e seu hash de acesso. 
 
+**GET /api/autenticacao**
+
 Envio:
 Enviar um identificador, que poderá ser o CNS (no caso do Cartório) ou CNPJ (no caso de Empresa)
 e passe (senha).
