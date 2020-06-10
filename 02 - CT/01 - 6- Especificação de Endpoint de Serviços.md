@@ -1,10 +1,11 @@
 ---
+title: Especificação de Endpoint de Serviços - 6
 method: GET
 url: "{{CARTORIO_URL}}:/api/servicos"
 ---
 
 
-##### Especificação de Endpoint de Serviços - 6
+Especificação de Endpoint de Serviços - 6
 
 Os cartórios devem poder ver a especificação do endpoint de serviços prestados. Esse endpoint serve para que que cada cartório liste quais dos serviços especificados pelo CT ele fornece via API.
 
@@ -16,51 +17,15 @@ Exemplo: Via API, um sistema de cartório deve poder consultar os serviços espe
 
 
 
-- [URI](#uri)
-- [Header](#header)
-- [URL Params](#params)
-- [Body](#body)
-- [Response](#response)
-
-<a name="uri"></a>
-## URI
-
-| Method | URI | 
-| : |   :-   |
-| GET | `/api/servicos` |
-
-<a name="header"></a>
-## Header
-
-```markup 
-Content-Type : application/json
-Authorization : Bearer _token_do_jwt
+```request:cURL
+curl --location --request GET "{{CARTORIO_URL}}:/api/servicos" \
+  --header "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRlbnRpY2FjYW8iLCJpYXQiOjE1OTEzNjk5NzYsImV4cCI6MTU5MTM3MzU3NiwibmJmIjoxNTkxMzY5OTc2LCJqdGkiOiJoSFZwbVBuaEo4QzEyMFZiIiwic3ViIjoiNjgyNjI5YWEtZWM1OS00NTg0LWI3NDgtZjQzNWFmOGQzZjE4IiwicHJ2IjoiYzAxMGM4OGUxMWY0MWM0Njc5YTNmMzVlMmQwYWQ3YTVlOWFiOWNkMCJ9.1PFx1W5nn3WPRaIl_Ms23A9e15qwg3bZtCtgZOmwfBI" \
+  --header "Content-Type: application/json"
 ```
 
-<a name="params"></a>
-## URL Params
 
-```markup 
-none
-```
 
-<a name="body"></a>
-## Body
-
-```markup 
-none
-```
-
-<a name="response"></a>
-## Response
-
-> {success.fa-check-circle} Success Response
-
-Code: `200`
-
-Content:
-
-```json 
+```response:200
 {
     "current_page": 1,
     "data": [
@@ -172,4 +137,18 @@ Content:
     "to": 6,
     "total": 6
 }
+
 ```
+
+
+
+```response:401
+{
+  "error": "Token JWT inválido"
+}
+```
+
+
+
+
+
