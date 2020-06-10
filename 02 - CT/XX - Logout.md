@@ -1,5 +1,5 @@
 ---
-title: Logout -
+title: Logout --
 method: POST
 url: "{{CARTORIO_URL}}:/api/logout"
 ---
