@@ -66,7 +66,7 @@ print(response.text.encode('utf8'))
 ```
 
 
-```response:404
+```response:403
 {
   "error": "Cartório ou Empresa não cadastrado em nossa base de dados"
 }
