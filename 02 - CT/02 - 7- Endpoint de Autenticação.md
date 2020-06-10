@@ -4,7 +4,6 @@ method: POST
 url: "{{CARTORIO_URL}}:/api/autenticacao"
 ---
 
-
 Endpoint de Autenticação - 7
 
 Após a validação dos cadastros, os usuários poderão utilizar o Endpoint de Autenticação para logar no sistema.
@@ -17,7 +16,7 @@ e passe (senha).
 
 
 ```request:cURL
-curl --location --request POST '{{API_URL}}/autenticacao' \
+curl --location --request POST '{{CARTORIO_URL}}/autenticacao' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"identificacao": "123456",
@@ -29,7 +28,7 @@ curl --location --request POST '{{API_URL}}/autenticacao' \
 ```request:Python
 import requests
 
-url = "{{API_URL}}/autenticacao"
+url = "{{CARTORIO_URL}}/autenticacao"
 
 payload = "{\"identificacao\": \"123456\", \"passe\": \"123456\"\n}"
 headers = {
