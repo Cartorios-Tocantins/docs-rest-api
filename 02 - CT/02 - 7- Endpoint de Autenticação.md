@@ -1,5 +1,5 @@
 ---
-title: Authentication
+title: Endpoint de Autenticação - 7
 method: POST
 url: "{{CARTORIO_URL}}:/api/autenticacao"
 ---
@@ -60,5 +60,11 @@ print(response.text.encode('utf8'))
 ```response:404
 {
   "error": "Informe a identificação(CNPJ ou CNS) e o passe(senha)"
+}
+```
+
+```response:404
+{
+  "error": "Cartório ou Empresa não cadastrado em nossa base de dados"
 }
 ```
