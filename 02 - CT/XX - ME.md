@@ -1,6 +1,6 @@
 ---
 title: Me - Retorna os Dados do Usuário Autenticado -
-method: POST
+method: GET
 url: "{{API_URL}}/api/me"
 ---
 
@@ -9,7 +9,7 @@ Me - Retorna os Dados do Usuário Autenticado -
 
 Retorna os dados do usuário através do JWT token.
 
-**POST /api/me**
+**GET /api/me**
 
 ```request:cURL
 curl --location --request GET "{{API_URL}}/api/me" \
