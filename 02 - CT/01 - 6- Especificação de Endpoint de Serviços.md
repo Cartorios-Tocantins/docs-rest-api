@@ -13,6 +13,7 @@ Exemplo: Via API, um sistema de cartório deve poder consultar os serviços espe
 
 **GET /api/servicos**
 
+*O campo "slug" do retorno, é o nome do serviço,que deve ser usado posteriormente, para solicitar um novo serviço.
 *Verificar serviços e campos de cada um dos serviços.
 
 
