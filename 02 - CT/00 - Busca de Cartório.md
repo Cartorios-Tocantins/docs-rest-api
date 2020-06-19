@@ -37,14 +37,14 @@ print(response.text.encode('utf8'))
 {
   "id": "fa1af393-b577-40e5-a087-4b6b589c4d08",
   "cns": "123456",
-  "title": "NOME DO CARTÓRIO",
-  "services": []
+  "titulo": "NOME DO CARTÓRIO",
+  "serviços": []
 }
 ```
 
 
 ```response:401
 {
-  "error": "Identificação ou Senha inválidos"
+  "mensagem": "Identificação ou Senha inválidos"
 }
 ```

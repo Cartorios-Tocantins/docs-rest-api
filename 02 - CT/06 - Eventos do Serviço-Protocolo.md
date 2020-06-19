@@ -24,7 +24,7 @@ curl --location --request PUT "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:200
 {
-  "message": "Atualização feita com sucesso"
+  "mensagem": "Atualização feita com sucesso"
 }
 
 ```
@@ -32,7 +32,7 @@ curl --location --request PUT "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:401
 {
-  "status": "Token is Invalid"
+  "status": "Token Inválido"
 }
 
 ```
@@ -40,7 +40,7 @@ curl --location --request PUT "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:404
 {
-  "message": "Serviço não existe"
+  "mensagem": "Serviço não existe"
 }
 
 ```
@@ -48,7 +48,7 @@ curl --location --request PUT "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:404
 {
-  "message": "Token não existe"
+  "mensagem": "Token não existe"
 }
 
 ```

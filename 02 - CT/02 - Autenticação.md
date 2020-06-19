@@ -52,21 +52,21 @@ print(response.text.encode('utf8'))
 
 ```response:401
 {
-  "error": "Identificação ou Senha Inválidos"
+  "mensagem": "Identificação ou Senha Inválidos"
 }
 ```
 
 
 ```response:404
 {
-  "error": "Informe a identificação(CNPJ ou CNS) e o passe(senha)"
+  "mensagem": "Informe a identificação(CNPJ ou CNS) e o passe(senha)"
 }
 ```
 
 
 ```response:403
 {
-  "error": "Cartório ou Empresa não cadastrado em nossa base de dados"
+  "mensagem": "Cartório ou Empresa não cadastrado em nossa base de dados"
 }
 ```
 

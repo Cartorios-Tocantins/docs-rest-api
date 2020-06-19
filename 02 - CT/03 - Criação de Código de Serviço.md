@@ -26,7 +26,7 @@ curl --location --request POST "{{API_URL}}/api/servico" \
 
 ```response:200
 {
-  "message": "Criado com sucesso",
+  "mensagem": "Criado com sucesso",
   "hash": "tGS7SjsQEH"
 }
 ```
@@ -34,13 +34,13 @@ curl --location --request POST "{{API_URL}}/api/servico" \
 
 ```response:401
 {
-  "status": "Token is Invalid"
+  "status": "Token Inválido"
 }
 ```
 
 
 ```response:404
 {
-  "message": "Cartório não existe"
+  "mensagem": "Cartório não existe"
 }
 ```

@@ -62,7 +62,7 @@ curl --location --request GET "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:401
 {
-  "status": "Token is Invalid"
+  "status": "Token Inválido"
 }
 
 ```
@@ -70,7 +70,7 @@ curl --location --request GET "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:404
 {
-  "message": "Serviço não existe"
+  "mensagem": "Serviço não existe"
 }
 
 ```
@@ -78,7 +78,7 @@ curl --location --request GET "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:404
 {
-  "message": "Informe um token de serviço válido"
+  "mensagem": "Informe um token de serviço válido"
 }
 
 ```

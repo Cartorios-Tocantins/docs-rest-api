@@ -25,13 +25,13 @@ curl --location --request POST "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:200
 {
-  "message": "Atualização feita com sucesso"
+  "mensagem": "Atualização feita com sucesso"
 }
 ```
 
 
 ```response:401
 {
-  "status": "Token is Invalid"
+  "mensagem": "Token Inválido"
 }
 ```
