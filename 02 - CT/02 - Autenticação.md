@@ -1,5 +1,5 @@
 ---
-title: Endpoint de Autenticação - 7
+title: Endpoint de Autenticação
 method: POST
 url: "{{API_URL}}/api/autenticacao"
 ---

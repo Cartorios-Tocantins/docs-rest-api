@@ -1,5 +1,5 @@
 ---
-title: Verificação do Código de Acompanhamento de Serviço - 8.2
+title: Verificação do Código de Acompanhamento de Serviço
 method: GET
 url: "{{API_URL}}/api/{servico-x}/{hash}"
 ---

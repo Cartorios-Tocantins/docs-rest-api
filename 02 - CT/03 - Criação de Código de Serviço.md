@@ -1,5 +1,5 @@
 ---
-title: Endpoint de Criação de Código de Serviço - 8
+title: Endpoint de Criação de Código de Serviço
 method: POST
 url: "{{API_URL}}/api/servico"
 ---

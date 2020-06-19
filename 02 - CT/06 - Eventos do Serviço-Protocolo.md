@@ -1,5 +1,5 @@
 ---
-title: Endpoint de Eventos do Serviço - Protocolo - 8.3
+title: Endpoint de Eventos do Serviço - Protocolo
 method: PUT
 url: "{{API_URL}}/api/{servico-x}/{hash}"
 ---

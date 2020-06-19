@@ -1,5 +1,5 @@
 ---
-title: Especificação de Endpoint de Serviços - 6
+title: Especificação de Endpoint de Serviços
 method: GET
 url: "{{API_URL}}/api/servicos"
 ---
