@@ -142,7 +142,7 @@ curl --location --request GET "{{API_URL}}/api/servicos" \
 
 ```response:401
 {
-  "error": "Token JWT inválido"
+  "mensagem": "Token Inválido"
 }
 ```
 

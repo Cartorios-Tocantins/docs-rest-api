@@ -32,7 +32,7 @@ curl --location --request PUT "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
 
 ```response:401
 {
-  "status": "Token Inválido"
+  "mensagem": "Token Inválido"
 }
 
 ```
