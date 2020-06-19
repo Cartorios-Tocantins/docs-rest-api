@@ -5,13 +5,10 @@ url: "{{API_URL}}/api/cartorios/123456"
 ---
 
 
-Endpoint Busca de Cartório - 5.2
-
 Via API, o sistema do cliente deve poder consultar a lista de cartórios habilitados e as informações do cartório.Passar o CNS como parâmetro na URL. 
 
 Exemplo: Via API, um sistema de empresa deve poder consultar os cartórios cadastrados e habilitados pelo CT. 
 
-**GET /api/cartorios/{cns}**
 
 Encontra um cartório pelo seu CNS (só números) e retorna os dados dos cartórios: CNS, Denominação, e Serviços Prestados.
 

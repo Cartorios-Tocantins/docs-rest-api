@@ -12,7 +12,6 @@ que o cliente solicita.
 Consulte os serviços prestados em 6- Especificação de Endpoint de Serviços.
 Altere o (servico-x) parâmetro,conforme o serviço que desejar.
 
-**POST /api/{servico-x}/{hash}**
 
 
 ```request:cURL

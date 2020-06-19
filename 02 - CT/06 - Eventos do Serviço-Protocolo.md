@@ -10,7 +10,6 @@ No corpo da requisição passar o campo "update" que manda atualizações sobre 
 
 • Quando o protocolo for feito, é enviado um primeiro call-back informando que houve um evento novo (protocolo feito). 
 
-**PUT /api/{servico-x}/{hash}**
 
 
 ```request:cURL

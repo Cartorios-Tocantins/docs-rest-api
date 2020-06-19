@@ -8,10 +8,8 @@ url: "{{API_URL}}/api/{servico-x}/{hash}"
 Quando o cartório recebe o código de solicitação do serviço, o cartório se autentica e valida a veracidade da autorização através de um Endpoint junto ao CT. 
 
 * O campo "updates" são as atualizações que o cartório manda,sobre o status do andamento do serviço.
-Aqui o "updates" retorna vazio,porém nas próximas requisições o cartório atualiza essa mensagem e então 
-é possivel consultar um novo status do serviço.
+Aqui o "updates" retorna vazio,porém nas próximas requisições o cartório atualiza essa mensagem e então é possivel consultar um novo status do serviço.
 
-**GET /api/{servico-x}/{hash}**
 
 ```request:cURL
 curl --location --request GET "{{API_URL}}/api/servico-25o0/tGS7SjsQEH" \
