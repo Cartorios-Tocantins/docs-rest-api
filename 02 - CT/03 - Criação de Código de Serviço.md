@@ -1,5 +1,5 @@
 ---
-title: Endpoint de Criação de Código de Serviço
+title: Criação de Código de Serviço
 method: POST
 url: "{{API_URL}}/api/servico"
 ---
@@ -34,7 +34,7 @@ curl --location --request POST "{{API_URL}}/api/servico" \
 
 ```response:401
 {
-  "status": "Token Inválido"
+  "mensagem": "Token Inválido"
 }
 ```
 

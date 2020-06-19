@@ -1,5 +1,5 @@
 ---
-title: Endpoint Busca de Cartório
+title: Busca de Cartório
 method: GET
 url: "{{API_URL}}/api/cartorios/123456"
 ---

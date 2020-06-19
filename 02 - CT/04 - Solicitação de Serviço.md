@@ -1,5 +1,5 @@
 ---
-title: Endpoint Solicitação de Serviço
+title: Solicitação de Serviço
 method: POST
 url: "{{API_URL}}/api/{servico-x}/{hash}"
 ---
