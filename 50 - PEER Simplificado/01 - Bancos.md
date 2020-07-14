@@ -1,6 +1,6 @@
 ---
 method: POST
-url: "{{CARTORIO_URL}}:cns/bancos/contratos"
+url: "{{CARTORIO_URL}}bancos/contratos"
 ---
 
 ##### Contratos Eletrônicos
