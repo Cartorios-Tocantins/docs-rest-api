@@ -51,7 +51,7 @@ O presente método descreve como solicitar o serviço de emissão de Cédula de 
     "cedulas": [{
         "credor": {
             "nome": "Banco do Brasil S A",
-            "cpf_cnpj": "00.000.000/0000-00"
+            "cpf_cnpj": "00000000000000"
         },
         "codigo_do_contrato": "00/00000-0",
         "natureza_do_titulo": "Nota de Crédito Rural",
