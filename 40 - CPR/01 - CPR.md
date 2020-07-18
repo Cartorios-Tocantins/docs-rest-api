@@ -48,8 +48,6 @@ O presente método descreve como solicitar o serviço de emissão de Cédula de 
 
 ```json
 {
-    "data_hora": "",
-    "total_cedulas": "",
     "cedulas": [{
         "credor": {
             "nome": "Banco do Brasil S A",
