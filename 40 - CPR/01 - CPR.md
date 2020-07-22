@@ -11,7 +11,35 @@ O presente método descreve como solicitar o serviço de emissão de Cédula de 
 |-------------------------------------------------------------------|
 | **hash** `string` *Hash de acompanhamento registrado na central.* |
 
-| **Parâmetros**                                                                                                                                    |
+| **Parâmetros**                                                                                  |
+|-------------------------------------------------------------------------------------------------|
+| **nome** `string` *Nome do solicitante do serviço.*                                             |
+| **cnpj** `string` *CNPJ do solicitante do serviço, apenas números.*                             |
+| **mensagem** `string` *Mensagem para anexar à solicitação.*                                     |
+| **retorno** `string` *URL para envio de requisições de notificação de atualização do serviço.*  |
+| **arquivo** `binary` *Conteúdo do arquivo a ser enviado em anexo à solicitação do serviço.*     |
+| **pedido** `json` *Metadados da solicitação do serviço em formato JSON (mais detalhes abaixo).* |
+| **comprovante_itbi** `string` *Texto de aceitação do ITBI.*                                     |
+| **apresentante** `object` *Metadados do apresentate do serviço.*                                |
+| **apresentante['nome']** `string` *Nome do apresentate do serviço.*                             |
+| **apresentante['cpf_cnpj']** `string` *CPF ou CNPJ do apresentate do serviço.*                  |
+| **pagador** `object` *Metadados do pagador do serviço em formato JSON (mais detalhes abaixo).*  |
+| **pagador['nome']** `string` *Nome do pagador do serviço.*                                      |
+| **pagador['cpf_cnpj']** `string` *CPF ou CNPJ do pagador do serviço.*                           |
+| **pagador['ddd']** `string` *DDD do telefone do pagador.*                                       |
+| **pagador['telefone']** `string` *Telefone do pagador, apenas números.*                         |
+| **pagador['email']** `string` *Email do pagador.*                                               |
+| **pagador['endereco']** `object` *Metadados da do endereço do pagador do serviço.*              |
+| **pagador['endereco'\]['cep']** `string` *CEP do endereço.*                                     |
+| **pagador['endereco'\]['rua']** `string` *Rua do endereço.*                                     |
+| **pagador['endereco'\]['numero']** `string` *Numero do endereço.*                               |
+| **pagador['endereco'\]['bairro']** `string` *Bairro do endereço.*                               |
+| **pagador['endereco'\]['cidade']** `string` *Cidade do endereço.*                               |
+| **pagador['endereco'\]['uf']** `string` *UF do endereço.*                                       |
+| **pagador['endereco'\]['pais']** `string` *País do endereço.*                                   |
+| **pagador['endereco'\]['complemento']** `string` *Complemento do endereço.*                     |
+
+| **Formato do JSON**                                                                                                                               |
 |---------------------------------------------------------------------------------------------------------------------------------------------------|
 | **cedulas** `list` *Lista de cédulas a serem emitidas.*                                                                                           |
 | **cedulas[\*].credor** `object` *Credor da cédula.*                                                                                               |
@@ -92,14 +120,22 @@ O presente método descreve como solicitar o serviço de emissão de Cédula de 
 
 ```request:curl
 curl -X POST "{{CARTORIO_URL}}cpr/LfLT52...." 
-    -H "accept: */*" 
-    -H "Content-Type: application/json" 
-    -H "X-CSRF-TOKEN: " 
-    -d "{.....}"
+    -H  "accept: */*" 
+    -H  "Content-Type: multipart/form-data" 
+    -H  "X-CSRF-TOKEN: " 
+    -F "nome=Teste" 
+    -F "cnpj=000000000000" 
+    -F "mensagem=blablabla" 
+    -F "retorno=https://teste.com.br" 
+    -F "arquivo=" 
+    -F "pedido={...}" 
+    -F "comprovante_itbi=teste"
+
 ```
 
 ```response:200
 {
-  "situacao": "sucesso"
+  "status": 1,
+  "mensagem": "Pedido recebido com sucesso."
 }
 ```
