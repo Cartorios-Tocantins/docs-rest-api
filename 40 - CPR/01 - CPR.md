@@ -120,7 +120,7 @@ O presente método descreve como solicitar o serviço de emissão de Cédula de 
 
 ```request:curl
 curl -X POST "{{CARTORIO_URL}}cpr/LfLT52...." 
-    -H  "accept: */*" 
+    -H "accept: application/json" 
     -H  "Content-Type: multipart/form-data" 
     -H  "X-CSRF-TOKEN: " 
     -F "nome=Teste" 
